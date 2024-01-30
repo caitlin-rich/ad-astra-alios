@@ -51,7 +51,7 @@ export default function ActorCredits({seriesInfo}: any) {
         }
         getCredits()
     }
-      }, [seriesInfo])
+      }, [seriesInfo, seriesId])
 
     useEffect(()=>{
 
@@ -60,8 +60,6 @@ export default function ActorCredits({seriesInfo}: any) {
             const actorId = credit.id
             const actorCredits = await getActorCredits(actorId)
 
-            
-            
             actorCredits && actorCredits.cast.map((show: any) => {
                 const showId = show.id.toString()
                 
